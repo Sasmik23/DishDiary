@@ -16,6 +16,10 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 db_init(app)
 
 
+@app.route('/')
+def home():
+    return "Hello world"
+
 @app.route('/upload', methods = ['POST'])
 def upload():
 
