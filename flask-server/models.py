@@ -1,4 +1,4 @@
-from endpoints import db
+from db import db
 
 class images(db.Model):
     id = db.Column(db.Integer, primary_key = True)
