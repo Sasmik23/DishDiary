@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/DishDiary/static/css/main.396fbba0.css",
+    "main.js": "/DishDiary/static/js/main.6e80e11c.js",
+    "static/js/453.444439f7.chunk.js": "/DishDiary/static/js/453.444439f7.chunk.js",
+    "index.html": "/DishDiary/index.html",
+    "main.396fbba0.css.map": "/DishDiary/static/css/main.396fbba0.css.map",
+    "main.6e80e11c.js.map": "/DishDiary/static/js/main.6e80e11c.js.map",
+    "453.444439f7.chunk.js.map": "/DishDiary/static/js/453.444439f7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.396fbba0.css",
+    "static/js/main.6e80e11c.js"
+  ]
+}
