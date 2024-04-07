@@ -2,7 +2,6 @@ from flask import Flask,jsonify,request
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from models import images
-from db import db_init, db
 from gpt_manager import generate_image_description
 import base64
 
@@ -15,6 +14,17 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://xxsbhhpozcgvyy:e25d18ebd43c0
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///images.db'
 app.config['SQLAlCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['CORS_HEADERS'] = 'Content-Type'
+import os
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
+
+def db_init(app):
+    #app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+    db.init_app(app)
+    with app.app_context():
+        db.create_all()
+
 db_init(app)
 
 

@@ -1,7 +1,7 @@
 import click
 from flask.cli import with_appcontext
 
-from db import db
+from app import db
 from models import images
 
 @click.command(name='create_tables')
