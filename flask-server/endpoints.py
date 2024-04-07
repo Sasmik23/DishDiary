@@ -3,6 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from models import images
 from db import db_init, db
+from gpt_manager import generate_image_description
+
 
 app = Flask(__name__)
     
@@ -25,7 +27,7 @@ def upload():
         return jsonify({"error": "Bad upload"}), 400
 
     image_content = pic.read()
-    description = "test"
+    description = generate_image_description(image_content)
     
     img = images(image=image_content, name=filename, mimetype=mimetype, description= description)
     db.session.add(img)
