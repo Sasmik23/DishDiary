@@ -2,37 +2,67 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form-container {
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-align: center;
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.submit-button, .file-label {
+  background-color: #4CAF50;
   color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.file-label {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.file-input {
+  display: none;
+}
+
+.submit-button:hover, .file-label:hover {
+  background-color: #45a049;
+}
+
+.error {
+  color: red;
+}
+
+
+.gallery-container {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.gallery-image {
+  max-width: 100px; /* Adjust the maximum width of the images */
+  height: auto;
 }
