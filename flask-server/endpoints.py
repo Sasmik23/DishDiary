@@ -2,19 +2,25 @@ from flask import Flask,jsonify,request
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from models import images
-from db import db_init, db
 from gpt_manager import generate_image_description
 import base64
+from flask_migrate import Migrate
+
+from flask_sqlalchemy import SQLAlchemy
+
 
 
 app = Flask(__name__)
+
     
 CORS(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://xxsbhhpozcgvyy:e25d18ebd43c02b777cf0413a15aa6f3b38abee6879f0e6801dd8f039c287fc5@ec2-34-193-110-25.compute-1.amazonaws.com:5432/dtpj3qnei78r'
 app.config['SQLAlCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['CORS_HEADERS'] = 'Content-Type'
-db_init(app)
 
+db = SQLAlchemy()
+db.init_app(app)
+migrate = Migrate(app, db)
 
 @app.route('/')
 def home():
