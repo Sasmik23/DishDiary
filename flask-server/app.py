@@ -10,7 +10,7 @@ app = Flask(__name__)
     
 CORS(app)
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///images.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://hozandagbxumsc:32f4337aff757b3a200d33b00b307cf4348fd45a2249a65a46de6dc169b2c784@ec2-54-156-185-205.compute-1.amazonaws.com:5432/da63fboq5n8adi'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://hozandagbxumsc:32f4337aff757b3a200d33b00b307cf4348fd45a2249a65a46de6dc169b2c784@ec2-54-156-185-205.compute-1.amazonaws.com:5432/da63fboq5n8adi'
 app.config['SQLAlCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['CORS_HEADERS'] = 'Content-Type'
 db = SQLAlchemy()
