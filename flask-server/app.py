@@ -1,7 +1,6 @@
 from flask import Flask,jsonify,request
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
-from models import images
 from gpt_manager import generate_image_description
 import base64
 
