@@ -15,11 +15,11 @@ app.config['SQLAlCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['CORS_HEADERS'] = 'Content-Type'
 db = SQLAlchemy()
 
-'''
+
 db.init_app(app)
 with app.app_context():
     db.create_all()
-'''
+
 
 class images(db.Model):
     
