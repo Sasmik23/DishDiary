@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     async function fetchImages() {
       try {
-        const response = await fetch("http://localhost:5000/images");
+        const response = await fetch("https://dishdiary-3b3dcefb6f67.herokuapp.com/images");
         if (response.ok) {
           const data = await response.json();
           setGallery(data.map((item: { id: number; image: string; mimetype: string; description: string }) => ({
@@ -58,7 +58,7 @@ function App() {
     formData.append('pic', file);
 
     try {
-      const response = await fetch("http://localhost:5000/upload", {
+      const response = await fetch("https://dishdiary-3b3dcefb6f67.herokuapp.com/upload", {
         method: 'POST',
         body: formData
       });
