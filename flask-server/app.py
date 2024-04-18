@@ -7,6 +7,8 @@ import base64
 import os
 from .models import images
 from .database import db
+from flask_migrate import Migrate
+
 
 
 
@@ -19,6 +21,7 @@ app.config['SQLAlCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 db.init_app(app)
+migrate = Migrate(app, db)
 
 
 
