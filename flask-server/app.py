@@ -8,7 +8,7 @@ import os
 
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='../frontend/build') 
     
 CORS(app)
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///images.db'
@@ -39,10 +39,11 @@ class images(db.Model):
         self.mimetype = mimetype 
         self.description = description 
 
+'''
 @app.route('/')
 def home():
     return "Welcome to my Flask app!"
-
+'''
 
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
