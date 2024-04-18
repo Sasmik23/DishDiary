@@ -2,7 +2,6 @@ from flask import Flask,jsonify,request, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 import os
-print(os.listdir('/dishdiary/flask-server'))
 from .gpt_manager import generate_image_description
 import base64
 import os
