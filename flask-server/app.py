@@ -5,6 +5,7 @@ import os
 from .gpt_manager import generate_image_description
 import base64
 import os
+from .models import images
 
 
 
