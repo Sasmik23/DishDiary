@@ -1,8 +1,9 @@
-from flask import Flask,jsonify,request
+from flask import Flask,jsonify,request, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from gpt_manager import generate_image_description
 import base64
+import os
 
 
 
