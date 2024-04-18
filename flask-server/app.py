@@ -46,11 +46,6 @@ def catch_all(path):
     else:
         return send_from_directory(app.static_folder, 'index.html')
 
-
-@app.route('/')
-def home():
-    return "Hello world"
-
 @app.route('/upload', methods = ['POST'])
 def upload():
 
