@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 import os
 print(os.listdir('/dishdiary/flask-server'))
-from gpt_manager import generate_image_description
+from .gpt_manager import generate_image_description
 import base64
 import os
 

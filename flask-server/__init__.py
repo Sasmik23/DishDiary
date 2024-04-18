@@ -1,1 +1,0 @@
-from .gpt_manager import generate_image_description
