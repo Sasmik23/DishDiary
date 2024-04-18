@@ -38,7 +38,12 @@ class images(db.Model):
         self.name = name 
         self.mimetype = mimetype 
         self.description = description 
-    
+
+@app.route('/')
+def home():
+    return "Welcome to my Flask app!"
+
+
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def catch_all(path):
