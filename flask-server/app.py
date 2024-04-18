@@ -6,6 +6,7 @@ from .gpt_manager import generate_image_description
 import base64
 import os
 from .models import images
+from .database import db
 
 
 
@@ -16,12 +17,9 @@ CORS(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://hozandagbxumsc:32f4337aff757b3a200d33b00b307cf4348fd45a2249a65a46de6dc169b2c784@ec2-54-156-185-205.compute-1.amazonaws.com:5432/da63fboq5n8adi'
 app.config['SQLAlCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['CORS_HEADERS'] = 'Content-Type'
-db = SQLAlchemy()
-
 
 db.init_app(app)
-with app.app_context():
-    db.create_all()
+
 
 
 '''
@@ -75,4 +73,6 @@ def get_images():
 
 
 if __name__ == "__main__":
+    with app.app_context():
+        db.create_all()
     app.run(debug=True)

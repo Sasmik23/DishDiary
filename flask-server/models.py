@@ -1,4 +1,4 @@
-from .app import db
+from database import db
 
 class images(db.Model):
     
@@ -9,9 +9,3 @@ class images(db.Model):
     name = db.Column(db.Text, nullable=False)
     mimetype = db.Column(db.Text, nullable=False)
     description = db.Column(db.Text)
-    
-    def __init__(self,image, name, mimetype, description):
-        self.image = image
-        self.name = name 
-        self.mimetype = mimetype 
-        self.description = description 
