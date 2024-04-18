@@ -1,9 +1,9 @@
 from flask import Flask,jsonify,request, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
-import sys
-print("Python Path:", sys.path)
-import gpt_manager
+import os
+print(os.listdir('/dishdiary/flask-server'))
+from gpt_manager import generate_image_description
 import base64
 import os
 
@@ -60,7 +60,7 @@ def upload():
         return jsonify({"error": "Bad upload"}), 400
 
     image_content = pic.read()
-    description = gpt_manager.generate_image_description(image_content)
+    description = generate_image_description(image_content)
     
     img = images(image=image_content, name=filename, mimetype=mimetype, description= description)
     db.session.add(img)
